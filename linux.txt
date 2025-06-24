@@ -30,7 +30,8 @@ add_executable(helloc hellocmake.c)
 15.使用gdb 进行debug   gcc -ggdb test.c -o test.out
 生成core 核心存储文件  具体核心转储和gdb调试方式见https://linuxconfig.org/gdb-debugging-tutorial-for-beginners
 16.ctrl c  ctrl d退出
-17.
+17.git 基本使用 创建仓库，ssh连接，git clone 形成仓库
+	上传相关命令：git clone  git add ()  git commit -m ""    git push
 
 
 
