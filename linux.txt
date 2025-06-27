@@ -1,4 +1,5 @@
    
+   
 1.shell 命令ping网络 //ping www.baidu.com -c 4
 2.update apt// sed -i "s/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g" /etc/apt/sources.list
 （这里是使用的ubuntu22.04的源，其他版本应使用其他的源，后面可以自行查找使用）
@@ -32,6 +33,70 @@ add_executable(helloc hellocmake.c)
 16.ctrl c  ctrl d退出
 17.git 基本使用 创建仓库，ssh连接，git clone 形成仓库
 	上传相关命令：git clone  git add ()  git commit -m ""    git push
+18.tmux  简单指令使用 tmux split-window //划分上下两个窗格      tmux split-window-h//划分左右两个窗格 
+ # 光标切换到上方窗格
+$ tmux select-pane -U
+
+# 光标切换到下方窗格
+$ tmux select-pane -D
+
+# 光标切换到左边窗格
+$ tmux select-pane -L
+
+# 光标切换到右边窗格
+$ tmux select-pane -R
+19.make 编译 建立makefile 规则 
+  目标（target）:目标文件1 目标文件2
+<tap>gcc -o 预建立执行文件 目标文件1 目标文件2
+
+1.shell 命令ping网络 //ping www.baidu.com -c 4
+2.update apt// sed -i "s/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g" /etc/apt/sources.list
+（这里是使用的ubuntu22.04的源，其他版本应使用其他的源，后面可以自行查找使用）
+3.关机//poweroff 
+4.进入root//su -
+5.程序安装//sudo apt-get install
+6.目录ls    目录包含隐藏文件
+7.创建文件命令touch （选项）（文件）
+8.单纯创建文件mkdir
+9.gcc 编译 gcc （.c文件） -o  (编译后文件名)
+10.make 少量工程手写编译
+11.移动文件 mv (文件) （目标文件夹）
+12.gcc 编译 -c 只编译不链接 -g 调用GDB包含调试信息 -d 添加宏定义
+13.make编译链接（手动编译）  hello_demo :hellomakefile.o
+                             （tap）gcc -o hello_demo hellomakefile.o
+
+                         hellomakefile.o :hellomakefile.c
+                          （tap）   gcc -g -c hellomakefile.c
+                         .CEN :clean
+                         clean :
+                            （tap） rm hello_demo hellomakefile.o 
+14.cmake 编译（自动编译）CMakeLists.txt
+		CMakeLists.txt
+cmake_minimum_required(VERSION 2.8)
+
+project(learn_cmake)
+
+add_executable(helloc hellocmake.c)
+15.使用gdb 进行debug   gcc -ggdb test.c -o test.out
+生成core 核心存储文件  具体核心转储和gdb调试方式见https://linuxconfig.org/gdb-debugging-tutorial-for-beginners
+16.ctrl c  ctrl d退出
+17.git 基本使用 创建仓库，ssh连接，git clone 形成仓库
+	上传相关命令：git clone  git add ()  git commit -m ""    git push
+18.tmux  简单指令使用 tmux split-window //划分上下两个窗格      tmux split-window-h//划分左右两个窗格
+ # 光标切换到上方窗格
+$ tmux select-pane -U
+
+# 光标切换到下方窗格
+$ tmux select-pane -D
+
+# 光标切换到左边窗格
+$ tmux select-pane -L
+
+# 光标切换到右边窗格
+$ tmux select-pane -R
+19.make 编译 建立makefile 规则
+  目标（target）:目标文件1 目标文件2
+<tap>gcc -o 预建立执行文件 目标文件1 目标文件2
 
 
 
